@@ -7,7 +7,7 @@ function App() {
     
     <div className="App">
       <Helmet>
-        <title>Test | Lumytic</title>
+        <title>Test2 | Lumytic</title>
         <meta name="description" content="Test desc" />
         <meta name="title" content="Test | Lumytic" />
         <meta property="og:title" content="Test | Lumytic" />
