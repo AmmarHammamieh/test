@@ -7,12 +7,12 @@ function App() {
     
     <div className="App">
       <Helmet>
-        <title>test | Lumytic</title>
-        <meta name="description" content={"test desc"} />
-        <meta name="title" content={"test | Lumytic"} />
-        <meta property="og:title" content={"test | Lumytic"} />
-        <meta property="og:description" content={"test desc"} />
-        <meta property="og:image" content={"/logo192.png"} />
+        <title>Test | Lumytic</title>
+        <meta name="description" content="Test desc" />
+        <meta name="title" content="Test | Lumytic" />
+        <meta property="og:title" content="Test | Lumytic" />
+        <meta property="og:description" content="Test desc" />
+        <meta property="og:image" content="https://lumytic.com/d1665b83e85f05ae4c9b.webp" />
       </Helmet>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
