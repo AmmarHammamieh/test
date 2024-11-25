@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 const Home = () => {
   return (
     <div>
-         <Helmet>
+         <Helmet async>
             <title>Home | Lumytic</title>
             <meta name="description" content="Home desc" />
             <meta name="title" content="Home | Lumytic" />

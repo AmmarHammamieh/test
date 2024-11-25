@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 const Test = () => {
   return (
     <div>
-        <Helmet>
+        <Helmet async>
             <title>page | Lumytic</title>
             <meta name="description" content="page desc" />
             <meta name="title" content="page | Lumytic" />
