@@ -1,9 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Helmet from 'react-helmet';
 
 function App() {
   return (
+    
     <div className="App">
+      <Helmet>
+        <title>test | Lumytic</title>
+        <meta name="description" content={"test desc"} />
+        <meta property="og:title" content={t(`${namespace}:title`)} />
+        <meta property="og:description" content={"test desc"} />
+        <meta property="og:image" content={"/logo192.png"} />
+      </Helmet>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
