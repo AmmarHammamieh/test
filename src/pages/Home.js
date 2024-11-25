@@ -5,11 +5,11 @@ const Home = () => {
   return (
     <div>
         <Helmet prioritizeSeoTags>
-            <title>A fancy webpage</title>
-            <link rel="notImportant" href="https://www.chipotle.com" />
+            <meta name="description" content="po desc" />
+            <meta name="title" content="po | Lumytic" />
             <meta name="whatever" value="notImportant" />
             <link rel="canonical" href="https://www.tacobell.com" />
-            <meta property="og:title" content="A very important title"/>
+            <meta property="og:title" content="po | Lumytic"/>
         </Helmet>
         Home
     </div>
