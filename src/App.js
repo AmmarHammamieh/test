@@ -9,7 +9,7 @@ function App() {
       <Helmet>
         <title>test | Lumytic</title>
         <meta name="description" content={"test desc"} />
-        <meta property="og:title" content={t(`${namespace}:title`)} />
+        <meta property="og:title" content={"test | Lumytic"} />
         <meta property="og:description" content={"test desc"} />
         <meta property="og:image" content={"/logo192.png"} />
       </Helmet>
