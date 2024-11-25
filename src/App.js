@@ -6,7 +6,14 @@ function App() {
   return (
     
     <div className="App">
-
+      <Helmet>
+        <title>Test | Lumytic</title>
+        <meta name="description" content="Test desc" />
+        <meta name="title" content="Test | Lumytic" />
+        <meta property="og:title" content="Test | Lumytic" />
+        <meta property="og:description" content="Test desc" />
+        <meta property="og:image" content="https://lumytic.com/d1665b83e85f05ae4c9b.webp" />
+      </Helmet>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
