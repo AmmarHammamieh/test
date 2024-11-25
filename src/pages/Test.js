@@ -1,16 +1,15 @@
 import React from 'react'
-import Helmet from 'react-helmet';
+import Helmet from 'react-helmet-async';
 
 const Test = () => {
   return (
     <div>
-        <Helmet async>
-            <title>page | Lumytic</title>
-            <meta name="description" content="page desc" />
-            <meta name="title" content="page | Lumytic" />
-            <meta property="og:title" content="page | Lumytic" />
-            <meta property="og:description" content="page desc" />
-            <meta property="og:image" content="https://lumytic.com/d1665b83e85f05ae4c9b.webp" />
+        <Helmet prioritizeSeoTags>
+            <title>A fancy webpage</title>
+            <link rel="notImportant" href="https://www.chipotle.com" />
+            <meta name="whatever" value="notImportant" />
+            <link rel="canonical" href="https://www.tacobell.com" />
+            <meta property="og:title" content="A very important title"/>
         </Helmet>
         page
     </div>
