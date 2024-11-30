@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin');
+const PlaywrightRenderer = require('@prerenderer/webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js", // Main entry point
@@ -51,7 +51,7 @@ module.exports = {
       inject: true, // Automatically injects scripts
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR in development
-    new PrerendererWebpackPlugin({
+    new PlaywrightRenderer({
       // List of routes to prerender
       routes: ['/', '/test', '/blog/:id'],
       rendererOptions: {
