@@ -25,7 +25,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "postinstall": "apt-get update && apt-get install -y libnss3 libatk1.0 libatk-bridge2.0-0 libcups2 libxcomposite1 libxrandr2 libasound2 libpangocairo-1.0-0 libatspi2.0-0 libdrm2"
   },
   "eslintConfig": {
     "extends": [
