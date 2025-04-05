@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-const PlaywrightRenderer = require('@prerenderer/webpack-plugin');
+const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js", // Main entry point
@@ -51,22 +51,34 @@ module.exports = {
       inject: true, // Automatically injects scripts
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR in development
-    new PlaywrightRenderer({
-      // List of routes to prerender
-      routes: ['/', '/test', '/blog/:id'],
-      rendererOptions: {
-        timeout: 30000, // Increase timeout to 30 seconds
-        maxConcurrentRoutes: 1
-      },
+    new PrerendererWebpackPlugin({
+      routes: ['/', '/test'],
       postProcess: function (context) {
-        var titles = {
-          '/': 'title',
-          '/test': 'About Us',
+        const metaData = {
+          '/': {
+            title: 'Home - My React App',
+            description: 'Welcome to the homepage of my React app Home.',
+            keywords: 'home, react, app',
+            ogImage: 'https://lumytic.com/0edef19e15749b06fedf.webp',
+          },
+          '/test': {
+            title: 'test - My React App',
+            description: 'Read our latest test posts.',
+            keywords: 'test, posts, react',
+            ogImage: 'https://lumytic.com/0edef19e15749b06fedf.webp',
+          },
         };
-        context.html = context.html.replace(
-          /<title>[^<]*<\/title>/i,
-          `<title>${titles[context.route] || 'React App'}</title>`
-        );
+    
+        const routeData = metaData[context.route] || {};
+        const metaTags = `
+          <title>${routeData.title || 'Default Title'}</title>
+          <meta name="description" content="${routeData.description || 'Default description'}">
+          <meta name="keywords" content="${routeData.keywords || 'default, keywords'}">
+          <meta property="og:image" content="${routeData.ogImage || 'https://lumytic.com/default-image.webp'}">
+          <meta property="og:image:width" content="1200">
+          <meta property="og:image:height" content="630">
+        `;
+        context.html = context.html.replace(/<head>/i, `<head>${metaTags}`);
       },
     }),
   ],
