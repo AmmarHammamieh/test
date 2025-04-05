@@ -56,7 +56,7 @@ module.exports = {
       routes: ['/', '/test', '/blog/:id'],
       rendererOptions: {
         timeout: 30000, // Increase timeout to 30 seconds
-        maxConcurrentRoutes: 1
+        maxConcurrentRoutes: 3
       },
       postProcess: function (context) {
         var titles = {
