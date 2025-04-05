@@ -54,10 +54,6 @@ module.exports = {
     new PrerendererWebpackPlugin({
       // List of routes to prerender
       routes: ['/', '/test', '/blog/:id'],
-      rendererOptions: {
-        timeout: 30000, // Increase timeout to 30 seconds
-        maxConcurrentRoutes: 3
-      },
       postProcess: function (context) {
         var titles = {
           '/': 'title',
